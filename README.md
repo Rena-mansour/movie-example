@@ -1,2 +1,3 @@
 # Movie-Listing
-# Make a Movie Listing Page apply Pagination and Linking movie list to movie details page
+Make a Movie Listing Page 
+Apply Pagination and Linking movie list to movie details page
