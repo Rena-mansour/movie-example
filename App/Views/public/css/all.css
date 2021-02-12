@@ -1,0 +1,113 @@
+body {
+	background: #584747;
+	color: #ffffff;
+}
+
+h1 {
+	color: #ffffff;
+	font-size: 40px;
+	text-align: center;
+}
+
+.listing--paging {
+	display: flex;
+	flex-wrap: wrap;
+	background: #8e8080;
+	padding: 10px;
+}
+
+.listing--paging > a {
+	width: 50%;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.prev {
+	text-align: right;
+}
+
+.listing--paging > ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.listing--paging > ul > li {
+	list-style: none;
+	padding: 10px;
+	display: inline-block;
+}
+
+.listing--paging > ul > li > a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.listing--paging > ul > li > a.active {
+	color: #ff525e;
+}
+
+.listing--elements {
+	padding: 30px 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.element--box {
+	text-align: center;
+	width:50%;
+	margin-bottom: 20px;
+}
+
+.image--element {
+	display: block;
+	height: 300px;
+}
+
+.element--box img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.trailer--element a,
+.title--element a {
+	color: #ffffff;
+	padding: 5px;
+	display: block;
+	text-decoration: none;
+}
+
+.title--element {
+	font-size: 20px;
+	min-height: 56px;
+}
+
+.trailer--element {
+	min-height: 27px;
+	font-size: 15px;
+}
+
+
+/*tabletViewportWidth*/
+@media only screen and (min-width: 768px) {
+	.element--box {
+		width: 33%;
+	}
+}
+
+/*tabletLandscapeViewportWidth*/
+@media only screen and (min-width: 1024px) {
+	.element--box {
+		width: 25%;
+	}
+}
+
+/* desktopViewportWidth */
+@media only screen and (min-width: 1260px) {
+	.element--box {
+		width: 20%;
+	}
+}
