@@ -9,7 +9,7 @@
 	<div class="listing--paging">
 		<!-- Pagination - Next page -->
         <?php if ($args['page'] < $args['pagesNumber']) { ?>
-			<a href="<?php echo '//' . $_SERVER['SERVER_NAME'] . '/movie-example/?p=' . ($args['page'] + 1) ?>"
+			<a href="<?php echo '//' . $args['baseUrl'] . '/?p=' . ($args['page'] + 1) ?>"
 			   class="next" title="next">
 				Next
 			</a>
@@ -17,7 +17,7 @@
 
 		<!-- Pagination - Previous page -->
         <?php if ($args['page'] > 1) { ?>
-			<a href="<?php echo '//' . $_SERVER['SERVER_NAME'] . '/movie-example/?p=' . ($args['page'] - 1) ?>"
+			<a href="<?php echo '//' . $args['baseUrl'] . '/?p=' . ($args['page'] - 1) ?>"
 			   class="prev" title="prev">
 				Prev
 			</a>
@@ -28,7 +28,7 @@
 			<ul>
                 <?php for ($i = 1; $i <= $args['pagesNumber']; ++$i) { ?>
 					<li>
-						<a href="<?php echo '//' . $_SERVER['SERVER_NAME'] . '/movie-example/?p=' . $i ?>"
+						<a href="<?php echo '//' . $args['baseUrl'] . '/?p=' . $i ?>"
                             <?php if ($i == $args['page']) { ?> class="active" <?php } ?>>
                             <?php echo $i ?>
 						</a>
@@ -76,7 +76,7 @@
 	<div class="listing--paging">
 		<!-- Pagination - Next page -->
         <?php if ($args['page'] < $args['pagesNumber']) { ?>
-			<a href="<?php echo '//' . $_SERVER['SERVER_NAME'] . '/movie-example/?p=' . ($args['page'] + 1) ?>"
+			<a href="<?php echo '//' . $args['baseUrl'] . '/?p=' . ($args['page'] + 1) ?>"
 			   class="next" title="next">
 				Next
 			</a>
@@ -84,7 +84,7 @@
 
 		<!-- Pagination - Previous page -->
         <?php if ($args['page'] > 1) { ?>
-			<a href="<?php echo '//' . $_SERVER['SERVER_NAME'] . '/movie-example/?p=' . ($args['page'] - 1) ?>"
+			<a href="<?php echo '//' . $args['baseUrl'] . '/?p=' . ($args['page'] - 1) ?>"
 			   class="prev" title="prev">
 				Prev
 			</a>
@@ -95,7 +95,7 @@
 			<ul>
                 <?php for ($i = 1; $i <= $args['pagesNumber']; ++$i) { ?>
 					<li>
-						<a href="<?php echo '//' . $_SERVER['SERVER_NAME'] . '/movie-example/?p=' . $i ?>"
+						<a href="<?php echo '//' . $args['baseUrl'] . '/?p=' . $i ?>"
                             <?php if ($i == $args['page']) { ?> class="active" <?php } ?>>
                             <?php echo $i ?>
 						</a>

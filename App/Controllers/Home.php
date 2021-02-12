@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use Core\View as View;
-use Core\Controller as Controller;
+use \Core\View as View;
+use \Core\Controller as Controller;
 
 /**
  * Class Home
@@ -34,16 +34,18 @@ class Home extends Controller
         //get elements in current page
         $data = $this->getPage($content['data'], $limitStart, $limitEnd);
         //render elements and pager data in view
-        View::renderTemplate('Home/index.php', ['data' => $data, 'page' => $page, 'pagesNumber' => $pagesNumber]);
+        View::renderTemplate('Home/index.php',
+            ['data' => $data, 'page' => $page, 'pagesNumber' => $pagesNumber, 'baseUrl' => $this->getBaseUrl()]);
     }
 
     /**
      * get directory
+     * @param $level
      * @return string
      */
-    protected function getDir()
+    protected function getDir($level)
     {
-        $dir = dirname(__FILE__, 2);
+        $dir = dirname(__FILE__, $level);
 
         return $dir;
     }
@@ -70,7 +72,7 @@ class Home extends Controller
         $data = array();
         $isGerman = false;
         $count = 0;
-        $content = file($this->getDir() . '/Resources/movie.jsonlines');
+        $content = file($this->getDir(2) . '/Resources/movie.jsonlines');
         foreach ($content as $line) {
             $jsonData = json_decode($line, true);
 
@@ -101,6 +103,19 @@ class Home extends Controller
     protected function getPage($data, $limitStart, $limitEnd)
     {
         return array_slice($data, $limitStart, $limitEnd);
+    }
+
+    /**
+     * get Base Url
+     * @return string
+     */
+    protected function getBaseUrl()
+    {
+        $path = $this->getDir(3);
+        $directory = explode('/', $path);
+        $url = $_SERVER['SERVER_NAME'] . '/' . $directory[count($directory) - 1];
+
+        return $url;
     }
 }
 
